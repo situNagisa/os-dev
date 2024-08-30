@@ -2,41 +2,7 @@
 构建 gcc本地编译器
 
 ## 构建前准备
-我们的目录结构为：  
-&emsp;home  
-&emsp;&emsp;|——toolchains  
-&emsp;&emsp;|&emsp;&emsp;&emsp;*用于存放最终构建出来的编译器工具链*  
-&emsp;&emsp;|——toolchains_build   
-&emsp;&emsp;&emsp;&emsp;&emsp;*用于存放编译器源码*  
-
-运行环境为 linux  
-**注意：全程禁止sudo, 除了下载软件包**
-
-```shell
-cd ~
-mkdir -p toolchains toolchains_build
-```
-将我们的[环境变量导出脚本](../../script/export.sh)复制到`toolchains`目录下：  
-```shell
-cp export.sh ~/toolchains
-```
-编辑`~/.bashrc`或`~/.zshrc`文件，添加如下内容：
-```shell
-export TOOLCHIANSPATH=$HOME/toolchains
-export TOOLCHAINS_BUILD=$HOME/toolchains_build
-
-# 起一个别名，方便我们快速导入工具链
-alias get_toolchains='. $TOOLCHIANSPATH/export.sh'
-```
-更新源  
-ubuntu
-```shell
-sudo apt update
-```
-arch linux
-```shell
-sudo pacman -Sy
-```
+* [ 基本环境 ](../00基本环境/main.md)
 ## 构建gcc本地编译器 
 ### 思路
 编译gcc往往直接构建就行了（可能会有缺包问题，参考下文的`下载依赖`）  
