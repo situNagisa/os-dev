@@ -34,7 +34,7 @@ git clone https://github.com/trcrsired/toolchainbuildscripts.git
 cd $TOOLCHAINS_BUILD/toolchainbuildscripts/gccbuild/x86_64-w64-mingw32/
 CLONE_ON_CHINA=yes ./x86_64-w64-mingw32.sh # CLONE_ON_CHINA会换用国内的源，再用国外的源更新上游
 ```
-可以用[helloworld.cpp](../../script/helloworld.cpp)测试一下编译器是否正常工作
+可以用[helloworld.cpp](../../../script/helloworld.cpp)测试一下编译器是否正常工作
 ```shell
 # 因为生成了新的编译器，所以我们要重新导出工具链环境变量
 get_toolchains
@@ -51,7 +51,7 @@ cp $TOOLCHIANSPATH/x86_64-w64-mingw32/x86_64-w64-mingw32.tar.gz /mnt/c/...
 ```
 ### 构建x86-arm的 交叉编译器 与 加拿大本地编译器 与 加拿大交叉编译器
 将会构建：  
-* x86_64-pc-linux-gnu -> x86_64-pc-linux-gnu -> aarch64-linux-gnu 的linux交叉arm的交叉编译器
+* x86_64-pc-linux-gnu -> x86_64-pc-linux-gnu -> aarch64-linux-gnu 的x86交叉arm的交叉编译器
 * x86_64-pc-linux-gnu -> aarch64-linux-gnu -> aarch64-linux-gnu 的加拿大本地编译器
 * x86_64-pc-linux-gnu -> x86_64-w64-mingw32 -> aarch64-linux-gnu 的加拿大交叉编译器
 ```shell

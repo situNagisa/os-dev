@@ -108,7 +108,7 @@ which g++ # $TOOLCHAINSPATH/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/bin/g++
 cd $TOOLCHAINSPATH/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/bin
 ln -s gcc cc
 ```
-编译个[helloworld.cpp](../../script/helloworld.cpp)试试效果
+编译个[helloworld.cpp](../../../script/helloworld.cpp)试试效果
 ```shell
 cp helloworld.cpp ~
 cd ~

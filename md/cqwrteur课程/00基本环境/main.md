@@ -26,7 +26,7 @@ mkdir toolchains toolchains_build
 ```
 ## 环境变量：  
 ### linux
-将我们的[环境变量导出脚本](../../script/export.sh)复制到`toolchains`目录下：  
+将我们的[环境变量导出脚本](../../../script/export.sh)复制到`toolchains`目录下：  
 ```shell
 cp export.sh ~/toolchains
 ```

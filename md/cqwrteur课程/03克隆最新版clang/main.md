@@ -4,7 +4,7 @@ clang工具链放在toolchains/llvm下
 &emsp;home  
 &emsp;&emsp;|——toolchains  
 &emsp;&emsp;|&emsp;&emsp;&emsp;|——llvm  
-&emsp;&emsp;|&emsp;&emsp;&emsp;|&emsp;&emsp;&emsp;|——arch-platform-libc  
+&emsp;&emsp;|&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|——arch-platform-libc  
 &emsp;&emsp;|——toolchains_build   
 ```shell
 mkdir $TOOLCHIANSPATH/llvm
@@ -17,7 +17,7 @@ wget https://github.com/trcrsired/llvm-releases/releases/download/llvm20-2024082
 tar -xvf ./x86_64-generic-linux-gnu.tar.xz -C .
 ```
 导出环境变量
-```
+```shell
 get_toolchains
 ```
 测试
