@@ -2,12 +2,27 @@
 开始本教程之前，你需要：  
 * 阅读[【科普】编译器的构建基本原理](https://zhuanlan.zhihu.com/p/553543765)  
 * 完成[ 构建gcc本地编译器](../01构建gcc本地编译器/main.md)
+* 导出工具链环境变量`get_toolchians`
 
-## 构建gcc
-导出工具链环境变量
+## 修复gcc源码
+> 据cqwrteur本人所说，直接编译gcc源码会导致某些库给覆盖掉，所以要用fast io来进行修复  
+
+克隆fast io
 ```shell
-get_toolchians
+cd $TOOLCHAINS_BUILD
+git clone https://github.com/trcrsired/fast_io.git
 ```
+编译修复工具
+```shell
+cd $TOOLCHAINS_BUILD/fast_io/example/0009.filesystem/
+g++ -O3 -std=c++26 -flto -s -march=native ./gccx86canadianfix.cc -o gcc-x86-canadian-fix
+```
+修复gcc源码
+```shell
+./gcc-x86-canadian-fix $TOOLCHAINS_BUILD/gcc
+```
+## 构建gcc
+
 下载依赖
 ```shell
 # ubuntu

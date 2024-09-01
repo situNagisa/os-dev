@@ -1,4 +1,8 @@
 ﻿# 构建 gcc本地编译器
+
+您可以参考:
+* [ osdev构建gcc本地编译器 ](https://wiki.osdev.org/Building_GCC)
+
 构建 gcc本地编译器
 
 ## 构建前准备
@@ -53,7 +57,7 @@ mkdir binutils-gdb gcc
 cd $TOOLCHIANS_BUILD/build/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/binutils-gdb
 $TOOLCHIANS_BUILD/binutils-gdb/configure \
 	--prefix=$TOOLCHAINSPATH/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu \
-	--disable-nls \
+	--disable-nls \ # 取消本地语言支持
 	--disable-werror \
 	--enable-gold \
 	--with-python3
@@ -74,7 +78,7 @@ which objdump # $TOOLCHAINSPATH/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/bin/objd
 cd $TOOLCHIANS_BUILD/build/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/gcc
 $TOOLCHIANS_BUILD/gcc/configure \
 	--prefix=$TOOLCHAINSPATH/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu \
-	--disable-nls \
+	--disable-nls \ # 取消本地语言支持
 	--disable-werror \
 	--disable-bootstrap \
 	--enable-languages=c,c++ \
