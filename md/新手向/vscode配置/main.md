@@ -84,21 +84,30 @@ vscode 默认是英文，想要中文得装个插件
 建立`tasks.json`文件，将以下内容复制进去  
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
         {
-            "name": "(Windows) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program":  "${workspaceFolder}/${fileBasenameNoExtension}.exe",
-            "preLaunchTask": "run",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole":false
-        },
-    ]
+            "label": "run",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g", 
+                "${file}", 
+                "-o", 
+                "${fileBasenameNoExtension}.exe",
+            ]
+        }
+    ],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared", 
+        "showReuseMessage": true,
+        "clear": false
+    }
 }
 ```
 > task.json 是告诉vscode要如何编译链接你的程序的，以及程序生成在哪里
